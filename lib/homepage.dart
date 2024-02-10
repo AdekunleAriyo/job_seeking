@@ -140,16 +140,18 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          SizedBox(height: 10),
           Expanded(
             child: ListView.builder(
                 itemCount: recentJobs.length,
                 itemBuilder: (context, index) {
-                  return RecentJobCard(
-                    companyName: recentJobs[index][0],
-                    jobTitle: recentJobs[index][1],
-                    logoImagePath: recentJobs[index][2],
-                    hourlyRate: recentJobs[index][3],
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: RecentJobCard(
+                      companyName: recentJobs[index][0],
+                      jobTitle: recentJobs[index][1],
+                      logoImagePath: recentJobs[index][2],
+                      hourlyRate: recentJobs[index][3],
+                    ),
                   );
                 }),
           )
